@@ -46,7 +46,7 @@ namespace Kontur.Courses.Git
 			if (op == "*")
 				return v1 - v2;
 			if (op == "/")
-				return v1 / v2;
+				return v1/v2;
 			return Maybe<double>.FromError("Unknown operation '{0}'", op);
 		}
 	}
