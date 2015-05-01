@@ -1,3 +1,5 @@
+using System;
+
 namespace Kontur.Courses.Git
 {
 	public class Calculator
@@ -10,6 +12,15 @@ namespace Kontur.Courses.Git
 				return lastResult;
 			if (args.Length == 1)
 				return lastResult = double.Parse(args[0]);
+			if (args.Length == 2)
+			{
+				double val;
+				var v2 = double.Parse(args[1]);
+				if (!Double.TryParse(args[0], out val))
+				{
+					return lastResult = Execute(args[0], lastResult.Value, v2);
+				}
+			}
 			if (args.Length == 3)
 			{
 				var v1 = double.Parse(args[0]);
